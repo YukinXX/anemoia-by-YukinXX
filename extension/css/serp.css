@@ -1,0 +1,162 @@
+/*by YukinX*/
+
+@font-face { font-family: "MPR"; font-weight: 300; font-display: swap; src: url(chrome-extension://__MSG_@@extension_id__/fonts/mpr-latin-300.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD; }
+@font-face { font-family: "MPR"; font-weight: 300; font-display: swap; src: url(chrome-extension://__MSG_@@extension_id__/fonts/mpr-cyrillic-300.woff2) format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "MPR"; font-weight: 400; font-display: swap; src: url(chrome-extension://__MSG_@@extension_id__/fonts/mpr-latin-400.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD; }
+@font-face { font-family: "MPR"; font-weight: 400; font-display: swap; src: url(chrome-extension://__MSG_@@extension_id__/fonts/mpr-cyrillic-400.woff2) format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "MPR"; font-weight: 500; font-display: swap; src: url(chrome-extension://__MSG_@@extension_id__/fonts/mpr-latin-500.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD; }
+@font-face { font-family: "MPR"; font-weight: 500; font-display: swap; src: url(chrome-extension://__MSG_@@extension_id__/fonts/mpr-cyrillic-500.woff2) format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+
+html.anemoia-skin {
+  --mem-accent: #6db4ff;
+  --mem-text: #b4c0d6;
+  --mem-dim: #6a7892;
+  --mem-head: #e8f1ff;
+  --mem-link: #93bdff;
+  --mem-line: rgba(120, 175, 255, .13);
+  --mem-glass: rgba(3, 9, 22, .94);
+  --mem-col-right: 740px;
+  background: #000 !important;
+  color-scheme: dark !important;
+}
+
+html.anemoia-skin body { background: transparent !important; animation: mem-fade .8s ease both; padding-bottom: 96px; }
+@keyframes mem-fade { from { opacity: 0; } to { opacity: 1; } }
+
+html.anemoia-skin body *:not(img):not(video):not(canvas):not(svg):not(path):not(g-img) {
+  background-color: transparent !important;
+  border-color: var(--mem-line) !important;
+  box-shadow: none !important;
+}
+html.anemoia-skin body,
+html.anemoia-skin body *:not(svg):not(path):not([class*="material"]) {
+  color: var(--mem-text) !important;
+  font-family: "MPR", "Google Sans", Arial, sans-serif !important;
+}
+html.anemoia-skin body a:not(#mem-x) { color: var(--mem-link) !important; }
+html.anemoia-skin body :is(em, b, strong) { color: #e3ecff !important; font-style: normal; }
+html.anemoia-skin ::selection { background: rgba(109, 180, 255, .35); color: #fff; }
+
+html.anemoia-skin #searchform { background: linear-gradient(#000 30%, rgba(0, 0, 0, .7) 70%, transparent) !important; }
+html.anemoia-skin #logo { display: flex !important; align-items: center; justify-content: flex-start; text-decoration: none !important; }
+html.anemoia-skin #logo > * { display: none !important; }
+html.anemoia-skin #logo::after {
+  content: "ANEMOIA";
+  font: 300 15px/1 "MPR", sans-serif; letter-spacing: .42em; white-space: nowrap;
+  color: #dce8ff;
+  text-shadow: 0 0 14px rgba(120, 185, 255, .9), 0 0 32px rgba(70, 130, 255, .55);
+}
+
+html.anemoia-skin .RNNXgb {
+  border: 0 !important; border-radius: 0 !important;
+  box-shadow: 0 1px 0 rgba(109, 180, 255, .45), 0 12px 24px -16px rgba(109, 180, 255, .9) !important;
+}
+html.anemoia-skin textarea[name="q"], html.anemoia-skin input[name="q"] {
+  font-weight: 300 !important; font-size: 19px !important; letter-spacing: .02em;
+  color: #fff !important; caret-color: var(--mem-accent);
+  text-shadow: 0 0 14px rgba(120, 185, 255, .55);
+}
+html.anemoia-skin #searchform svg { opacity: .75; }
+
+html.anemoia-skin body :is([role="listbox"], [role="menu"], [role="dialog"], [role="tooltip"], g-menu, .UUbT9, .aajZCb) {
+  background-color: var(--mem-glass) !important;
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border: 1px solid rgba(109, 180, 255, .2) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .7), 0 0 24px rgba(60, 120, 255, .15) !important;
+}
+html.anemoia-skin body [role="option"][aria-selected="true"],
+html.anemoia-skin body [role="option"]:hover,
+html.anemoia-skin body [role="menuitem"]:hover { background-color: rgba(109, 180, 255, .12) !important; }
+
+html.anemoia-skin [role="navigation"] :is(a, [role="link"], [aria-current]):not(#mem-x) { color: var(--mem-dim) !important; text-decoration: none !important; transition: color .2s, text-shadow .2s; }
+html.anemoia-skin [role="navigation"] :is(a, [role="link"]):hover:not(#mem-x) { color: #c9d7ee !important; }
+html.anemoia-skin [role="navigation"] [aria-current="page"]:not(#mem-x),
+html.anemoia-skin [role="navigation"] [aria-current="page"] *:not(#mem-x) {
+  color: #fff !important;
+  text-shadow: 0 0 12px rgba(120, 185, 255, .9), 0 0 26px rgba(80, 140, 255, .5);
+}
+
+html.anemoia-skin #search h3, html.anemoia-skin #botstuff h3, html.anemoia-skin #rso [role="heading"] {
+  color: var(--mem-head) !important;
+  font-weight: 400 !important;
+  letter-spacing: .01em;
+  text-shadow: 0 0 12px rgba(110, 170, 255, .35);
+}
+html.anemoia-skin #search a:hover h3, html.anemoia-skin #botstuff a:hover h3 {
+  color: #fff !important; text-decoration: none !important;
+  text-shadow: 0 0 10px rgba(150, 205, 255, .95), 0 0 28px rgba(80, 140, 255, .6);
+}
+html.anemoia-skin #search cite, html.anemoia-skin #search cite *, html.anemoia-skin .VuuXrf { color: #6f8fb8 !important; }
+html.anemoia-skin #search img { filter: saturate(.85) brightness(.92); border-radius: 8px; }
+
+html.anemoia-skin .mem-res { position: relative !important; z-index: 0; }
+html.anemoia-skin .mem-res::before {
+  content: ""; position: absolute; inset: -10px -18px; z-index: -1; pointer-events: none;
+  border-radius: 14px; opacity: 0; transition: opacity .25s ease;
+  background: linear-gradient(90deg, rgba(90, 160, 255, .13), rgba(90, 160, 255, .035) 65%, transparent) !important;
+  box-shadow: inset 2px 0 0 rgba(150, 205, 255, .95), -8px 0 22px -8px rgba(110, 180, 255, .8) !important;
+}
+html.anemoia-skin .mem-res.mem-sel::before { opacity: 1; }
+html.anemoia-skin .mem-res.mem-sel h3 {
+  color: #fff !important;
+  text-shadow: 0 0 10px rgba(150, 205, 255, .95), 0 0 28px rgba(80, 140, 255, .6) !important;
+}
+
+html.anemoia-skin #botstuff a[role="button"], html.anemoia-skin #botstuff [role="button"] {
+  border: 1px solid rgba(109, 180, 255, .25) !important; border-radius: 22px !important;
+}
+html.anemoia-skin #footcnt, html.anemoia-skin #footcnt * { color: var(--mem-dim) !important; }
+
+#mem-scene, #mem-shade, #mem-crt, #mem-flash, #mem-hud { display: none; }
+html.anemoia-skin #mem-scene { display: block; position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -2; pointer-events: none; }
+html.anemoia-skin #mem-shade {
+  display: block; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(90deg, rgba(0, 0, 0, .78) 0, rgba(0, 0, 0, .66) var(--mem-col-right), rgba(0, 0, 0, .12) calc(var(--mem-col-right) + 220px), transparent calc(var(--mem-col-right) + 360px));
+}
+html.anemoia-skin.mem-crt #mem-crt {
+  display: block; position: fixed; inset: 0; z-index: 2147483000; pointer-events: none;
+  background: repeating-linear-gradient(to bottom, rgba(0, 0, 0, .1) 0, rgba(0, 0, 0, .1) 1px, transparent 1px, transparent 3px);
+}
+html.anemoia-skin #mem-flash {
+  display: block; position: fixed; inset: 0; z-index: 2147483002; pointer-events: none; opacity: 0;
+  background: radial-gradient(circle at 30% 45%, rgba(220, 238, 255, .95), rgba(60, 120, 230, .55) 30%, rgba(0, 0, 0, .96) 75%);
+  transition: opacity .25s ease;
+}
+html.anemoia-skin #mem-flash.go { opacity: 1; }
+
+html.anemoia-skin #mem-hud {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 2147483001;
+  padding: 44px 28px 16px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, .9) 42%, #000 68%) !important;
+  font: 400 14px/1.2 "MPR", sans-serif; color: #d9e2f2;
+  pointer-events: none;
+}
+html.anemoia-skin #mem-hud > * { pointer-events: auto; }
+html.anemoia-skin #mem-hud * { font-family: "MPR", sans-serif !important; background-color: transparent !important; }
+html.anemoia-skin #mem-hud .crumb { color: var(--mem-dim); letter-spacing: .1em; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 32vw; }
+html.anemoia-skin #mem-hud .crumb span { color: var(--mem-dim) !important; cursor: pointer; }
+html.anemoia-skin #mem-hud .crumb span:last-child { color: #98a6bf !important; cursor: default; }
+html.anemoia-skin #mem-hud .crumb i { font-style: normal; opacity: .5; margin: 0 .5em; }
+html.anemoia-skin #mem-hud .hints { display: flex; gap: clamp(22px, 4vw, 64px); }
+html.anemoia-skin #mem-hud button {
+  all: unset; display: inline-flex; align-items: center; gap: .45em; cursor: pointer;
+  font: 400 15px/1 "MPR", sans-serif; color: #d9e2f2 !important; transition: opacity .25s, color .2s;
+}
+html.anemoia-skin #mem-hud button:hover { color: #fff !important; }
+html.anemoia-skin #mem-hud button.off { opacity: .28; pointer-events: none; }
+html.anemoia-skin #mem-hud .sym { font-size: 1.05em; }
+html.anemoia-skin #mem-hud .sym.x { color: #a8a2ff !important; text-shadow: 0 0 8px rgba(168, 162, 255, .6); }
+html.anemoia-skin #mem-hud .sym.o { color: #ff8fb0 !important; text-shadow: 0 0 8px rgba(255, 143, 176, .6); }
+html.anemoia-skin #mem-hud .sym.t { color: #7fe0a6 !important; text-shadow: 0 0 8px rgba(127, 224, 166, .6); }
+html.anemoia-skin #mem-hud .right { display: flex; align-items: center; gap: 16px; }
+html.anemoia-skin #mem-hud .clock { font-weight: 300; font-size: 20px; letter-spacing: .06em; color: #dce8ff !important; text-shadow: 0 0 14px rgba(100, 160, 255, .45); }
+html.anemoia-skin #mem-hud .mute { font-size: 11px; letter-spacing: .14em; color: var(--mem-dim) !important; }
+html.anemoia-skin #mem-hud .mute::before { content: "♪ "; color: var(--mem-accent); }
+html.anemoia-skin #mem-hud .mute.is-muted::before { color: var(--mem-dim); }
+
+@media (max-width: 760px) {
+  html.anemoia-skin #mem-hud .crumb, html.anemoia-skin #mem-hud .mute { display: none; }
+  html.anemoia-skin #mem-hud .hints button span:last-child { display: none; }
+}

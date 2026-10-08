@@ -1,0 +1,81 @@
+{
+  "manifest_version": 3,
+  "name": "Anemoia",
+  "short_name": "Anemoia",
+  "version": "1.1.5",
+  "description": "A new tab and Google search page in the spirit of 2000s game consoles: glowing orbs, fog and soft ambient sound.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw+D2Cn1vGiI6vuOfsuvmhWL+iNM7Et53qperYEoDJAYli7hfXp14EzS9KDdmdfzqrapz3O9ynwpQP6pEcsYAEoKTV6HQWrnC5xR/Yz24W4CrDXLv2ZxfE+r5Hqdjhwn9tIsfxUY3Is9ESDYWb8A/fh1yYvMUa2hk2k7zQbKdFofjd0rXhlDhrXZ2KWvTNTaEqrqIUiko3arEDd0plAcwv2IokZfap13Ye59DzPkD+ActlhzumjP6VBOcjUWgXG/ClqjzZxeNPGdJunTBTPsiR39ro89UvoED9XJP9QemFETB89u18u5EfEyZ4a8WS2eizoMgKLGxIK5ag+OI5zCyoQIDAQAB",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "background": {
+    "service_worker": "js/sw.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.com/search*",
+        "https://google.com/search*",
+        "https://www.google.ru/search*",
+        "https://www.google.com.ua/search*",
+        "https://www.google.by/search*",
+        "https://www.google.kz/search*",
+        "https://www.google.nl/search*"
+      ],
+      "css": [
+        "css/serp.css"
+      ],
+      "js": [
+        "js/serp-early.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.google.com/search*",
+        "https://google.com/search*",
+        "https://www.google.ru/search*",
+        "https://www.google.com.ua/search*",
+        "https://www.google.by/search*",
+        "https://www.google.kz/search*",
+        "https://www.google.nl/search*"
+      ],
+      "js": [
+        "js/serp.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "fonts/*",
+        "_favicon/*"
+      ],
+      "matches": [
+        "https://www.google.com/*",
+        "https://google.com/*",
+        "https://www.google.ru/*",
+        "https://www.google.com.ua/*",
+        "https://www.google.by/*",
+        "https://www.google.kz/*",
+        "https://www.google.nl/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "bookmarks",
+    "topSites",
+    "sessions",
+    "search",
+    "favicon"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "minimum_chrome_version": "116"
+}

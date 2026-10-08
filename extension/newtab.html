@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<!--by YukinX-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Tab</title>
+  <link rel="icon" href="icons/icon32.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="booting">
+  <canvas id="scene"></canvas>
+  <div id="vignette" aria-hidden="true"></div>
+  <div id="crt" aria-hidden="true"></div>
+
+  <section id="intro" aria-hidden="true">
+    <div class="logo">ANEMOIA</div>
+    <div class="tag">system ready</div>
+  </section>
+
+  <header id="clock">
+    <div class="time">--:--</div>
+    <div class="date"></div>
+  </header>
+
+  <button id="mute" aria-label="Sound"></button>
+  <div id="lang" role="group" aria-label="Language"><button data-lang="ru">RUS</button><button data-lang="en">ENG</button></div>
+
+  <nav id="menu">
+    <div class="crumb"></div>
+    <button class="arrow up" aria-label="Up">▲</button>
+    <div class="list"></div>
+    <button class="arrow down" aria-label="Down">▼</button>
+    <div class="desc"></div>
+  </nav>
+
+  <footer id="hints">
+    <button data-act="enter"><span class="sym x">✕</span><span data-i18n="hintOpen"></span></button>
+    <button data-act="back"><span class="sym o">○</span><span data-i18n="hintBack"></span></button>
+    <button data-act="edit"><span class="sym t">△</span><span data-i18n="hintEdit"></span></button>
+  </footer>
+
+  <div id="search" class="overlay" hidden>
+    <div class="box">
+      <div class="label" data-i18n="search"></div>
+      <input type="text" spellcheck="false" autocomplete="off" data-i18n-ph="searchPlaceholder">
+      <div class="line"></div>
+      <div class="tip" data-i18n="searchTip"></div>
+    </div>
+  </div>
+
+  <div id="form" class="overlay" hidden>
+    <form class="box">
+      <div class="label" data-i18n="siteLabel"></div>
+      <label><span data-i18n="fieldTitle"></span><input name="title" spellcheck="false" autocomplete="off" required></label>
+      <label><span data-i18n="fieldUrl"></span><input name="url" spellcheck="false" autocomplete="off" placeholder="youtube.com" required></label>
+      <div class="buttons">
+        <button type="submit"><span class="sym x">✕</span><span data-i18n="save"></span></button>
+        <button type="button" data-cancel><span class="sym o">○</span><span data-i18n="cancel"></span></button>
+      </div>
+    </form>
+  </div>
+
+  <div id="flash" aria-hidden="true"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

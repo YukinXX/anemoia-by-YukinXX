@@ -1,0 +1,16 @@
+{
+  "name": "anemoia",
+  "version": "1.1.5",
+  "private": true,
+  "description": "A new tab in the spirit of 2000s game consoles for Vivaldi and Chromium browsers",
+  "scripts": {
+    "build": "esbuild --banner:js=//by\\ YukinX app=src/main.js serp=src/serp.js serp-early=src/serp-early.js sw=src/sw.js --bundle --format=iife --target=chrome116 --legal-comments=none --outdir=extension/js --minify",
+    "watch": "esbuild --banner:js=//by\\ YukinX app=src/main.js serp=src/serp.js serp-early=src/serp-early.js sw=src/sw.js --bundle --format=iife --target=chrome116 --legal-comments=none --outdir=extension/js --sourcemap --watch"
+  },
+  "devDependencies": {
+    "@fontsource/m-plus-rounded-1c": "^5.3.0",
+    "esbuild": "^0.28.2",
+    "three": "^0.186.1"
+  },
+  "author": "YukinX"
+}
